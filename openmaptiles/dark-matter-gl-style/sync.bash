@@ -11,5 +11,11 @@ echo "Syncing style.json"
 rm style.json
 cp /tmp/dark-matter-gl-style/style.json ./style.json
 
-echo "Import to mapka"
-yarn workspace @mapka/styles run import
+echo "Convert to mapka"
+yarn import
+
+echo "Validate style spec"
+yarn validate
+
+echo "Format style spec"
+yarn format
