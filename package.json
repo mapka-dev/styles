@@ -4,6 +4,11 @@
   "engines": {
     "node": "24.x"
   },
+  "bin": {
+    "format": "./bin/format.ts",
+    "import": "./bin/import.ts",
+    "validate": "./bin/validate.ts"
+  },
   "type": "module",
   "license": "UNLICENSED",
   "private": true,
@@ -11,12 +16,10 @@
     "openmaptiles/*",
     "maputnik/*"
   ],
-  
   "dependencies": {
     "@types/node": "^24.0.0"
   },
-  "scripts": {
-    "sync": "",
-    "import": "node scripts/import.ts"
+  "devDependencies": {
+    "@maplibre/maplibre-gl-style-spec": "^23.3.0"
   }
 }

@@ -24,11 +24,11 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key={key}"
+      "url": "https://api.mapka.localhost/v1/mapka/tilesets/maptiler-v3.11-openmaptiles/tile.json"
     }
   },
-  "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
+  "sprite": "https://api.mapka.localhost/v1/openmaptiles/styles/osm-bright-gl/sprite",
+  "glyphs": "https://api.mapka.localhost/v1/openmaptiles/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",

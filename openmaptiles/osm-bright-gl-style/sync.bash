@@ -10,3 +10,12 @@ cp -r /tmp/osm-bright-gl-style/icons ./icons
 echo "Syncing style.json"
 rm style.json
 cp /tmp/osm-bright-gl-style/style.json ./style.json
+
+echo "Convert to mapka"
+yarn import
+
+echo "Validate style spec"
+yarn validate
+
+echo "Format style spec"
+yarn format

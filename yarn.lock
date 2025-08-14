@@ -23,7 +23,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/styles@workspace:."
   dependencies:
+    "@maplibre/maplibre-gl-style-spec": "npm:^23.3.0"
     "@types/node": "npm:^24.0.0"
+  bin:
+    format: ./bin/format.ts
+    import: ./bin/import.ts
+    validate: ./bin/validate.ts
   languageName: unknown
   linkType: soft
 
@@ -49,8 +54,6 @@ __metadata:
 "@maputnik/osm-liberty@workspace:maputnik/osm-liberty":
   version: 0.0.0-use.local
   resolution: "@maputnik/osm-liberty@workspace:maputnik/osm-liberty"
-  dependencies:
-    "@maplibre/maplibre-gl-style-spec": "npm:^23.3.0"
   languageName: unknown
   linkType: soft
 

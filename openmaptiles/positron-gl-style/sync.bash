@@ -10,3 +10,12 @@ cp -r /tmp/positron-gl-style/icons ./icons
 echo "Syncing style.json"
 rm style.json
 cp /tmp/positron-gl-style/style.json ./style.json
+
+echo "Convert to mapka"
+yarn import
+
+echo "Validate style spec"
+yarn validate
+
+echo "Format style spec"
+yarn format
