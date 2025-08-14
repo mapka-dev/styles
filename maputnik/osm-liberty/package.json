@@ -1,0 +1,27 @@
+{
+  "name": "@maputnik/osm-liberty",
+  "version": "0.1.0",
+  "description": "A free Mapbox GL basemap style for everyone",
+  "scripts": {
+    "format": "gl-style-format style.json",
+    "validate": "gl-style-validate style.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maputnik/osm-liberty.git"
+  },
+  "keywords": [
+    "maps",
+    "cartography",
+    "mapbox-gl-js",
+    "mapbox-gl"
+  ],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/maputnik/osm-liberty/issues"
+  },
+  "homepage": "https://github.com/maputnik/osm-liberty#readme",
+  "devDependencies": {
+    "@maplibre/maplibre-gl-style-spec": "^23.3.0"
+  }
+}

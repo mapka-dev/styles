@@ -1,0 +1,17 @@
+{
+  "name": "@mapka/styles",
+  "version": "1.0.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "openmaptiles/*",
+    "maputnik/*"
+  ],
+  "scripts": {
+    "sync": ""
+  }
+}
