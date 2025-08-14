@@ -11,7 +11,12 @@
     "openmaptiles/*",
     "maputnik/*"
   ],
+  
+  "dependencies": {
+    "@types/node": "^24.0.0"
+  },
   "scripts": {
-    "sync": ""
+    "sync": "",
+    "import": "node scripts/import.ts"
   }
 }

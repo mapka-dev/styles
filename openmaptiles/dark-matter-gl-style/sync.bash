@@ -10,3 +10,6 @@ cp -r /tmp/dark-matter-gl-style/icons ./icons
 echo "Syncing style.json"
 rm style.json
 cp /tmp/dark-matter-gl-style/style.json ./style.json
+
+echo "Import to mapka"
+yarn workspace @mapka/styles run import

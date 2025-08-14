@@ -22,6 +22,8 @@ __metadata:
 "@mapka/styles@workspace:.":
   version: 0.0.0-use.local
   resolution: "@mapka/styles@workspace:."
+  dependencies:
+    "@types/node": "npm:^24.0.0"
   languageName: unknown
   linkType: soft
 
@@ -51,6 +53,15 @@ __metadata:
     "@maplibre/maplibre-gl-style-spec": "npm:^23.3.0"
   languageName: unknown
   linkType: soft
+
+"@types/node@npm:^24.0.0":
+  version: 24.2.1
+  resolution: "@types/node@npm:24.2.1"
+  dependencies:
+    undici-types: "npm:~7.10.0"
+  checksum: 10c5/22e84fa71bc153247f289b5465077a87e783522e4e0900ce9fbb86caad58d59e3dae95b7f9e5e43ae5c69e19926ddb58105977d9bb09bcb274a91423f53c7aae
+  languageName: node
+  linkType: hard
 
 "json-stringify-pretty-compact@npm:^4.0.0":
   version: 4.0.0
@@ -84,5 +95,12 @@ __metadata:
   version: 3.0.0
   resolution: "tinyqueue@npm:3.0.0"
   checksum: 10c5/fd842730b13e2efa126c9648dc941661449cbf98490caeaf1f11ac17dcc0c8d2294621faf440cd7c16eef04f1dcc5550b2b243ef379fba3c49aca4535302f64e
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.10.0":
+  version: 7.10.0
+  resolution: "undici-types@npm:7.10.0"
+  checksum: 10c5/ed4b117500a804f33aed1b412b24237d4ed7356a769e5cb9ad9c9653af365b13ba33dc6a2c6a0e124567a2f4dc94eb8939554838c3f57adc2bd6b2310dc289a4
   languageName: node
   linkType: hard

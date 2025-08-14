@@ -1,5 +1,14 @@
 {
   "cSpell.words": [
-    "maptiler"
-  ]
+    "fontstack",
+    "maptiler",
+    "openmaptiles",
+    "tilesets"
+  ], 
+  "files.associations": {
+    ".env.example": "env",
+    ".env.test": "env",
+    ".env.local": "env",
+    ".env.dev": "env"
+  },
 }

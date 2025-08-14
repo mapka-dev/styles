@@ -5,6 +5,9 @@ node_modules
 
 # misc
 .env
+.env.local
+.env.dev
+.env.prod
 .eslintcache
 
 # logs
