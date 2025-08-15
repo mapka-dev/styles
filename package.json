@@ -1,0 +1,25 @@
+{
+  "name": "@mapka/styles",
+  "version": "1.0.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "bin": {
+    "format": "./bin/format.ts",
+    "import": "./bin/import.ts",
+    "validate": "./bin/validate.ts"
+  },
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "openmaptiles/*",
+    "maputnik/*"
+  ],
+  "dependencies": {
+    "@types/node": "^24.0.0"
+  },
+  "devDependencies": {
+    "@maplibre/maplibre-gl-style-spec": "^23.3.0"
+  }
+}
