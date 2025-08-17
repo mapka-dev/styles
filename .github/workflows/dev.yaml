@@ -67,6 +67,7 @@ jobs:
       working-directory: maputnik
       env: 
         MAPKA_ACCOUNT_NAME: maputnik
+        MAPKA_API_URL: https://api.dev.mapka.dev
         MAPKA_API_KEY: ${{ secrets.MAPKA_DEV_MAPUTNIK_API_KEY }}
       run: |
         cd osm-liberty
