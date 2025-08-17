@@ -3,6 +3,8 @@
     "fontstack",
     "maplibre",
     "maptiler",
+    "maputnik",
+    "nodenv",
     "openmaptiles",
     "tilesets"
   ], 
@@ -11,5 +13,5 @@
     ".env.test": "env",
     ".env.local": "env",
     ".env.dev": "env"
-  },
+  }
 }

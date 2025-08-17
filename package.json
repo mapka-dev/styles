@@ -9,6 +9,10 @@
     "import": "./bin/import.ts",
     "validate": "./bin/validate.ts"
   },
+  "scripts": {
+    "lint": "biome lint --write .",
+    "check": "biome check --write ."
+  },
   "type": "module",
   "license": "UNLICENSED",
   "private": true,
@@ -16,10 +20,10 @@
     "openmaptiles/*",
     "maputnik/*"
   ],
-  "dependencies": {
-    "@types/node": "^24.0.0"
-  },
   "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@biomejs/biome": "^2.2.0",
+    "@chyzwar/biome-config": "^0.3.0",
     "@maplibre/maplibre-gl-style-spec": "^23.3.0"
   }
 }

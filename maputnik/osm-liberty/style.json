@@ -9,7 +9,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key={key}"
+      "url": "https://api.mapka.localhost/v1/mapka/tilesets/maptiler-v3.11-openmaptiles/tile.json"
     },
     "natural_earth_shaded_relief": {
       "maxzoom": 6,
@@ -20,8 +20,8 @@
       "type": "raster"
     }
   },
-  "sprite": "https://maputnik.github.io/osm-liberty/sprites/osm-liberty",
-  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "sprite": "https://api.mapka.localhost/v1/maputnik/styles/osm-liberty/sprite",
+  "glyphs": "https://api.mapka.localhost/v1/maputnik/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
