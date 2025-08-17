@@ -12,6 +12,9 @@
     "mapbox-gl-js",
     "mapbox-gl"
   ],
+  "dependencies": {
+    "@mapka/styles": "1.0.0"
+  },
   "author": "",
   "bugs": {
     "url": "https://github.com/maputnik/osm-liberty/issues"
