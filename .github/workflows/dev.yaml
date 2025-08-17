@@ -54,11 +54,6 @@ jobs:
         mapka map push --yes --publish
         cd ..
 
-        cd maptiler-toner-gl-style
-        yarn import
-        mapka map push --yes --publish
-        cd ..
-
         cd osm-bright-gl-style
         yarn import
         mapka map push --yes --publish
