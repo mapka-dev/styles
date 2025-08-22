@@ -20,8 +20,8 @@ styleConfig.glyphs = `${MAPKA_API_URL}/v1/${MAPKA_ACCOUNT_NAME}/fonts/{fontstack
 styleConfig.sprite = `${MAPKA_API_URL}/v1/${MAPKA_ACCOUNT_NAME}/styles/${key}/sprite`;
 
 if (styleConfig.sources.openmaptiles) {
-  if("url" in styleConfig.sources.openmaptiles) {
-    styleConfig.sources.openmaptiles.url = `${MAPKA_API_URL}/v1/mapka/tilesets/maptiler-v3.11-openmaptiles/tile.json`;
+  if ("url" in styleConfig.sources.openmaptiles) {
+    styleConfig.sources.openmaptiles.url = `${MAPKA_API_URL}/v1/mapka/tilesets/planetiler_openmaptiles-v1/tile.json`;
   }
 }
 

@@ -6,6 +6,7 @@
     "maputnik",
     "nodenv",
     "openmaptiles",
+    "planetiler",
     "tilesets"
   ], 
   "files.associations": {

@@ -96,12 +96,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chyzwar/biome-config@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@chyzwar/biome-config@npm:0.3.0"
+"@chyzwar/biome-config@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@chyzwar/biome-config@npm:0.4.0"
   peerDependencies:
     "@biomejs/biome": ^2.0.0
-  checksum: 10c5/6eb72d8cc6fc853d556fd2d0b5103c2792679f8c589fe4cfb6024ea41fad361494d42e4ca2c72906fce988f97bd491ffcf30f5033c3993dcab04d7f168fd24a8
+  checksum: 10c5/3e41cbeac6ea4e744ddc9fedcd7edbdb1e6795291ce8f41503b506db34878efcf5681cef5a931df04184a9df5c40cc7f3a716d7b62a1dcc318d961c8e2a6a95f
   languageName: node
   linkType: hard
 
@@ -124,9 +124,9 @@ __metadata:
   resolution: "@mapka/styles@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.2.0"
-    "@chyzwar/biome-config": "npm:^0.3.0"
+    "@chyzwar/biome-config": "npm:^0.4.0"
     "@maplibre/maplibre-gl-style-spec": "npm:^23.3.0"
-    "@types/node": "npm:^24.0.0"
+    "@types/node": "npm:^24.3.0"
   bin:
     format: ./bin/format.ts
     import: ./bin/import.ts
@@ -161,12 +161,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@types/node@npm:^24.0.0":
-  version: 24.2.1
-  resolution: "@types/node@npm:24.2.1"
+"@types/node@npm:^24.3.0":
+  version: 24.3.0
+  resolution: "@types/node@npm:24.3.0"
   dependencies:
     undici-types: "npm:~7.10.0"
-  checksum: 10c5/22e84fa71bc153247f289b5465077a87e783522e4e0900ce9fbb86caad58d59e3dae95b7f9e5e43ae5c69e19926ddb58105977d9bb09bcb274a91423f53c7aae
+  checksum: 10c5/e636316cc39adf5b506d18d71422597b5f6b1d49966f1d27d0d44a95904e062efc348055b351e3106a164c2b2a75f2d7e7b6ac137b6e7bdd7aba47f89236bc2f
   languageName: node
   linkType: hard
 

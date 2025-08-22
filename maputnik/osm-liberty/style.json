@@ -9,7 +9,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.mapka.localhost/v1/mapka/tilesets/maptiler-v3.11-openmaptiles/tile.json"
+      "url": "https://api.mapka.localhost/v1/mapka/tilesets/planetiler_openmaptiles-v1/tile.json"
     },
     "natural_earth_shaded_relief": {
       "maxzoom": 6,
