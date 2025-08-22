@@ -24,7 +24,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.mapka.localhost/v1/mapka/tilesets/maptiler-v3.11-openmaptiles/tile.json"
+      "url": "https://api.mapka.localhost/v1/mapka/tilesets/planetiler_openmaptiles-v1/tile.json"
     }
   },
   "sprite": "https://api.mapka.localhost/v1/openmaptiles/styles/osm-bright-gl/sprite",
