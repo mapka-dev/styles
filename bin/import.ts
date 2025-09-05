@@ -25,4 +25,13 @@ if (styleConfig.sources.openmaptiles) {
   }
 }
 
+if(styleConfig.sources.natural_earth_shaded_relief) {
+  if ("tiles" in styleConfig.sources.natural_earth_shaded_relief) {
+    styleConfig.sources.natural_earth_shaded_relief.maxzoom = 5;
+    styleConfig.sources.natural_earth_shaded_relief.tiles = [
+      `${MAPKA_API_URL}/v1/naturalearth/datasets/ne_shaded_relief/tilesets/v3_10m_hr_lc_sr_w/{z}/{x}/{y}.png`,
+    ]
+  }
+}
+
 writeFileSync("style.json", JSON.stringify(styleConfig, null, 2));
