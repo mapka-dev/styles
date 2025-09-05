@@ -12,10 +12,10 @@
       "url": "https://api.mapka.localhost/v1/mapka/tilesets/planetiler_openmaptiles-v1/tile.json"
     },
     "natural_earth_shaded_relief": {
-      "maxzoom": 6,
+      "maxzoom": 5,
       "tileSize": 256,
       "tiles": [
-        "https://klokantech.github.io/naturalearthtiles/tiles/natural_earth_2_shaded_relief.raster/{z}/{x}/{y}.png"
+        "https://api.mapka.localhost/v1/naturalearth/datasets/ne_shaded_relief/tilesets/v3_10m_hr_lc_sr_w/{z}/{x}/{y}.png"
       ],
       "type": "raster"
     }
