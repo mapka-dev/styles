@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - develop
+      - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -38,3 +38,39 @@ jobs:
 
     - name: Install 
       run: yarn install --immutable
+
+    - name: Install mapka cli
+      run: curl -fsSL https://download.mapka.dev/install-mapka-cli.sh | bash
+      
+    - name: Publish openmaptiles styles
+      working-directory: openmaptiles
+      env: 
+        MAPKA_ACCOUNT_NAME: openmaptiles
+        MAPKA_API_URL: https://api.mapka.dev
+        MAPKA_API_KEY: ${{ secrets.MAPKA_PROD_OPENMAPTILES_API_KEY }}
+      run: |
+        cd dark-matter-gl-style
+        yarn import
+        mapka map push --yes --publish
+        cd ..
+
+        cd osm-bright-gl-style
+        yarn import
+        mapka map push --yes --publish
+        cd ..
+
+        cd positron-gl-style
+        yarn import
+        mapka map push --yes --publish
+    
+    - name: Publish maputnik styles
+      working-directory: maputnik
+      env: 
+        MAPKA_ACCOUNT_NAME: maputnik
+        MAPKA_API_URL: https://api.mapka.dev
+        MAPKA_API_KEY: ${{ secrets.MAPKA_PROD_MAPUTNIK_API_KEY }}
+      run: |
+        cd osm-liberty
+        yarn import
+        mapka map push --yes --publish
+        cd ..
