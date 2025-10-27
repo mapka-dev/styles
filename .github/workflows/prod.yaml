@@ -1,6 +1,9 @@
 name: "[Prod] Publish styles"
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     types: [closed]
     branches:
@@ -12,7 +15,6 @@ concurrency:
   
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
