@@ -1,7 +1,9 @@
 #!/bin/bash
 
 rm -rf /tmp/osm-liberty
-git clone https://github.com/maputnik/osm-liberty.git /tmp/osm-liberty
+git clone https://github.com/denniskuijs/osm-liberty.git /tmp/osm-liberty
+(cd /tmp/osm-liberty && git checkout new-maki-icons)          
+
 
 echo "Syncing icons..."
 rm -rf ./icons

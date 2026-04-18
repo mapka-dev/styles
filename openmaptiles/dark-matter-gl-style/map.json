@@ -1,5 +1,6 @@
 {
   "$schema": "https://schema.mapka.dev/cli-map.json",
   "key": "dark-matter-gl",
+  "name": "Dark Matter",
   "scope": "public"
 }

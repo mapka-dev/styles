@@ -1,5 +1,6 @@
 {
   "$schema": "https://schema.mapka.dev/cli-map.json",
   "key": "positron-gl",
+  "name": "Positron",
   "scope": "public"
 }

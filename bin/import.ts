@@ -34,4 +34,17 @@ if(styleConfig.sources.natural_earth_shaded_relief) {
   }
 }
 
+styleConfig.metadata = {
+  mapka: {
+    layerGroups: [{
+      value: "basemap",
+      label: "Basemap",
+      children: styleConfig.layers.map(layer => ({
+        value: layer.id,
+      })),
+    }],
+  },
+};
+
+
 writeFileSync("style.json", JSON.stringify(styleConfig, null, 2));

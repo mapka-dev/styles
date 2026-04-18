@@ -1,5 +1,6 @@
 {
   "$schema": "https://schema.mapka.dev/cli-map.json",
   "key": "osm-liberty",
+  "name": "OSM Liberty",
   "scope": "public"
 }
