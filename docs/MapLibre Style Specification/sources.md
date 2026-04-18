@@ -48,8 +48,8 @@ Mapbox Vector Tile format (or MapLibre Tiles via `encoding: "mlt"`).
 | `maxzoom` | number | `22` | Tile zoom ceiling. Overzooming is handled by the renderer past this. |
 | `attribution` | string | — | Shown in the map attribution control. HTML allowed. |
 | `promoteId` | string \| object | — | Promote a feature property to the feature `id`. Object form: `{ "layer": "propName", … }`. |
-| `volatile` | boolean | `false` | If true, tiles are not persisted in the local cache. |
-| `encoding` | `"mvt"`\|`"mlt"` | `"mvt"` | Tile encoding. |
+| `volatile` | boolean | `false` | If true, tiles are not persisted in the local cache. **Native only** (Android ≥ 9.3.0, iOS ≥ 5.10.0) — GL JS upstream is `wontfix`, the property is ignored on web. |
+| `encoding` | `"mvt"`\|`"mlt"` | `"mvt"` | Tile encoding. `mlt` (MapLibre Tiles) — GL JS ≥ 5.12.0, Native Android ≥ 12.1.0, iOS ≥ 6.20.0. |
 
 ---
 
@@ -68,7 +68,7 @@ Generic raster tiles (PNG/JPEG/WebP).
 | `tileSize` | number | `512` | Logical pixel size per tile. Use `256` for OSM-style tiles, `512` for most vendor raster tiles. |
 | `scheme` | `"xyz"`\|`"tms"` | `"xyz"` | |
 | `attribution` | string | — | |
-| `volatile` | boolean | `false` | |
+| `volatile` | boolean | `false` | **Native only** (see `vector.volatile` note). |
 
 ---
 
@@ -86,12 +86,12 @@ Elevation-encoded raster tiles for [`terrain`](terrain.md) and `hillshade` layer
 | `maxzoom` | number | `22` | |
 | `tileSize` | number | `512` | |
 | `attribution` | string | — | |
-| `encoding` | `"terrarium"` \| `"mapbox"` \| `"custom"` | `"mapbox"` | Height decoding. `mapbox` = `(R*256² + G*256 + B) * 0.1 − 10000`; `terrarium` = `(R*256 + G + B/256) − 32768`. |
-| `redFactor` | number | `1` | Only relevant for `encoding: "custom"`. |
-| `greenFactor` | number | `1` | |
-| `blueFactor` | number | `1` | |
-| `baseShift` | number | `0` | |
-| `volatile` | boolean | `false` | |
+| `encoding` | `"terrarium"` \| `"mapbox"` \| `"custom"` | `"mapbox"` | Height decoding. `mapbox` = `(R*256² + G*256 + B) * 0.1 − 10000`; `terrarium` = `(R*256 + G + B/256) − 32768`. `"custom"` is **GL JS ≥ 3.4.0 only** — Native tracks [maplibre-native #2783](https://github.com/maplibre/maplibre-native/issues/2783). |
+| `redFactor` | number | `1` | Only relevant for `encoding: "custom"`. GL JS ≥ 3.4.0. |
+| `greenFactor` | number | `1` | Only relevant for `encoding: "custom"`. GL JS ≥ 3.4.0. |
+| `blueFactor` | number | `1` | Only relevant for `encoding: "custom"`. GL JS ≥ 3.4.0. |
+| `baseShift` | number | `0` | Only relevant for `encoding: "custom"`. GL JS ≥ 3.4.0. |
+| `volatile` | boolean | `false` | **Native only** (see `vector.volatile` note). |
 
 Custom decoding: `height = redFactor*R + greenFactor*G + blueFactor*B + baseShift`.
 

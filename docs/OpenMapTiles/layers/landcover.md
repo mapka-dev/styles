@@ -2,6 +2,8 @@
 
 Physical surface coverage — forests, grasslands, rocks, ice, sand, wetlands. Natural Earth supplies glaciers/ice at low zoom; OSM fills in everything else at higher zoom.
 
+> Upstream: [openmaptiles/layers/landcover/landcover.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/landcover/landcover.yaml) · [schema page](https://openmaptiles.org/schema/#landcover)
+
 - **Geometry:** Polygon.
 - **Buffer size:** `4` px.
 - **Data sources:**

@@ -92,6 +92,28 @@ Flat array pairing each anchor with its own offset:
 
 Anchors are tried in array order; first non-colliding wins.
 
+### `sprite`
+
+The root-level `sprite` property accepts two shapes: a single URL string, or an array of `{ id, url }` objects (multi-sprite form). See [`sprite.md`](sprite.md) for the URL-probe rules and the `default`-id exception.
+
+Each entry in the per-image sprite index JSON takes the shape:
+
+```json
+{
+  "width": number, "height": number,
+  "x": number, "y": number,
+  "pixelRatio": number,
+  "sdf": boolean,
+  "content": [number, number, number, number],
+  "stretchX": [[number, number], ...],
+  "stretchY": [[number, number], ...],
+  "textFitWidth":  "stretchOnly" | "proportional" | "stretchOrShrink",
+  "textFitHeight": "stretchOnly" | "proportional" | "stretchOrShrink"
+}
+```
+
+`textFitWidth` / `textFitHeight` are GL JS ≥ 4.2.0, Native Android ≥ 11.4.0, iOS ≥ 6.6.0.
+
 ### `promoteId`
 
 Value of the `promoteId` source option. Either:

@@ -2,6 +2,8 @@
 
 Linear water features — rivers, streams, canals, drains, ditches. Natural Earth at low zoom, OSM from z9 upward. Unnamed short linestrings are filtered out at low zoom to reduce noise.
 
+> Upstream: [openmaptiles/layers/waterway/waterway.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/waterway/waterway.yaml) · [schema page](https://openmaptiles.org/schema/#waterway)
+
 - **Geometry:** Line.
 - **Buffer size:** `4` px.
 - **Data sources:**

@@ -26,7 +26,8 @@ Displays pixel tiles from a [`raster`](../sources.md#raster), [`image`](../sourc
 | `raster-brightness-max` | number | `1` | [0, 1] | Output white level. |
 | `raster-saturation` | number | `0` | [-1, 1] | -1 = grey, 0 = unchanged, +1 = fully saturated. |
 | `raster-contrast` | number | `0` | [-1, 1] | Negative compresses, positive stretches. |
-| `raster-resampling` | `"linear"` \| `"nearest"` | `"linear"` | — | Sampler when upscaling/downscaling tiles. `nearest` preserves crisp pixel boundaries (useful for classified rasters). |
+| `resampling` | `"linear"` \| `"nearest"` | `"linear"` | — | Sampler when upscaling/downscaling tiles. `nearest` preserves crisp pixel boundaries (useful for classified rasters). *Since GL JS 5.20.0. Native tracking in maplibre-native issue #4117.* |
+| `raster-resampling` | `"linear"` \| `"nearest"` | `"linear"` | — | **Deprecated alias** for `resampling`. Still parsed on all SDKs; prefer `resampling` where supported. See [`deprecations.md`](../deprecations.md). |
 | `raster-fade-duration` | number | `300` | ms | Cross-fade time between old and new tile sets when zoom crosses a tile boundary. |
 
 ## Layout properties
@@ -54,7 +55,7 @@ Displays pixel tiles from a [`raster`](../sources.md#raster), [`image`](../sourc
 
 **Colour-blind-friendly mute** — `raster-saturation: -0.3`.
 
-**Sharp nearest-neighbor for classified land-cover rasters** — `raster-resampling: "nearest"`.
+**Sharp nearest-neighbor for classified land-cover rasters** — `resampling: "nearest"` (or `raster-resampling: "nearest"` on SDKs before GL JS 5.20.0).
 
 ## Performance
 

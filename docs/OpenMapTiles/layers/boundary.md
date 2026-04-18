@@ -2,6 +2,8 @@
 
 Administrative borders as linestrings (countries, states, counties, municipalities) plus aboriginal lands as polygons. Natural Earth powers the lowest zooms; OSM takes over at z5+.
 
+> Upstream: [openmaptiles/layers/boundary/boundary.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/boundary/boundary.yaml) · [schema page](https://openmaptiles.org/schema/#boundary)
+
 - **Geometry:** Line (admin borders), polygon (aboriginal lands).
 - **Buffer size:** `4` px.
 - **Data sources:**
@@ -18,7 +20,7 @@ Administrative borders as linestrings (countries, states, counties, municipaliti
 | `adm0_l` | string | Country name on the **left** side (country borders only). |
 | `adm0_r` | string | Country name on the **right** side (country borders only). |
 | `disputed` | 0/1 | Whether the border is disputed. |
-| `disputed_name` | string | Identifier for the disputed area (e.g. `Crimea`, `Dokdo`, `IndianClaim-North`, `AbuMusaIsland`). |
+| `disputed_name` | string | Identifier for the disputed area (e.g. `Crimea`, `Dokdo`, `IndianClaim-North`, `AbuMusaIsland`). `admin_level=2` borders only. |
 | `claimed_by` | string | ISO2 country code of the claimant (country borders only). Use to toggle visibility per viewer. |
 | `maritime` | 0/1 | Maritime border flag. |
 

@@ -27,7 +27,7 @@ Flat polygon fills. Optional outline stroke and sprite pattern.
 | `fill-outline-color` | color | matches `fill-color` | — | Outline colour. Requires `fill-antialias: true`. *data-driven, transitionable.* |
 | `fill-translate` | `[x, y]` | `[0, 0]` | px | Pixel offset applied at draw time. *transitionable.* |
 | `fill-translate-anchor` | `"map"` \| `"viewport"` | `"map"` | — | Whether translation rotates with the map. |
-| `fill-pattern` | resolvedImage | — | — | Sprite icon name for tiled pattern. Suppresses `fill-color`. *transitionable.* |
+| `fill-pattern` | resolvedImage | — | — | Sprite icon name for tiled pattern. Suppresses `fill-color`. *data-driven (since 0.49.0), transitionable.* |
 
 ## Layout properties
 

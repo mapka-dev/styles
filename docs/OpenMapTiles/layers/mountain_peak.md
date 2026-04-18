@@ -2,7 +2,9 @@
 
 Natural peaks, volcanoes, saddles, ridges, cliffs, and arêtes from OSM. One of the rare layers with both metric and imperial elevations precomputed.
 
-- **Geometry:** Point.
+> Upstream: [openmaptiles/layers/mountain_peak/mountain_peak.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/mountain_peak/mountain_peak.yaml) · [schema page](https://openmaptiles.org/schema/#mountain_peak)
+
+- **Geometry:** Point (primary). `ridge` and `arete` can also come through as lines via `update_mountain_linestring.sql`.
 - **Buffer size:** `64` px.
 - **Data source:** OSM (`natural=peak`, `natural=volcano`, `natural=saddle`, `natural=ridge`, `natural=cliff`, `natural=arete`); requires `ne_10m_admin_0_countries` to compute `customary_ft`.
 - **Typical minzoom:** ~7 (rank-filtered).

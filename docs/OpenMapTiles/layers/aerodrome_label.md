@@ -2,6 +2,8 @@
 
 Point labels for airports, heliports, and airfields, derived from OSM `aeroway=aerodrome` features. Use together with the `aeroway` layer, which carries runway/taxiway geometry.
 
+> Upstream: [openmaptiles/layers/aerodrome_label/aerodrome_label.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/aerodrome_label/aerodrome_label.yaml) · [schema page](https://openmaptiles.org/schema/#aerodrome_label)
+
 - **Geometry:** Point (centroid or OSM node).
 - **Buffer size:** `64` px (large buffer so labels near tile edges don't clip).
 - **Data source:** OpenStreetMap only.

@@ -2,6 +2,8 @@
 
 Label layer for named highways. Only roads that are named **and** long enough for text placement appear here. Roads with identical names are stitched together for cleaner long-road labels.
 
+> Upstream: [openmaptiles/layers/transportation_name/transportation_name.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/transportation_name/transportation_name.yaml) · [schema page](https://openmaptiles.org/schema/#transportation_name)
+
 - **Geometry:** Line.
 - **Buffer size:** `8` px.
 - **Data source:** OSM; requires the `transportation` layer and `highway_class()` logic.

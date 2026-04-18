@@ -52,17 +52,14 @@ jobs:
         MAPKA_API_KEY: ${{ secrets.MAPKA_DEV_OPENMAPTILES_API_KEY }}
       run: |
         cd dark-matter-gl-style
-        yarn import
         mapka map push --yes --publish
         cd ..
 
         cd osm-bright-gl-style
-        yarn import
         mapka map push --yes --publish
         cd ..
 
         cd positron-gl-style
-        yarn import
         mapka map push --yes --publish
     
     - name: Publish maputnik styles
@@ -73,6 +70,5 @@ jobs:
         MAPKA_API_KEY: ${{ secrets.MAPKA_DEV_MAPUTNIK_API_KEY }}
       run: |
         cd osm-liberty
-        yarn import
         mapka map push --yes --publish
         cd ..

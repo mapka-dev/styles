@@ -38,7 +38,7 @@ Icons and labels. By far the most complex layer type — it handles placement, c
 | `symbol-spacing` | number [1, ∞) | `250` | Distance in px between placements on `symbol-placement: line`. |
 | `symbol-avoid-edges` | boolean | `false` | Drop symbols whose bbox crosses a tile edge. Reduces duplicate labels near tile seams; can leave gaps. |
 | `symbol-sort-key` | number | — | Collision priority; lower is higher priority. *data-driven.* |
-| `symbol-z-order` | `"auto"` \| `"viewport-y"` \| `"source"` | `"auto"` | Within-layer draw order. `viewport-y` sorts by screen Y for nice stacking on tilted maps. |
+| `symbol-z-order` | `"auto"` \| `"viewport-y"` \| `"source"` | `"auto"` | Within-layer draw order. `viewport-y` sorts by screen Y for nice stacking on tilted maps. *Since 0.49.0.* |
 
 ### Icon
 
@@ -49,12 +49,12 @@ Icons and labels. By far the most complex layer type — it handles placement, c
 | `icon-rotation-alignment` | `"map"` \| `"viewport"` \| `"auto"` | `"auto"` | Rotation reference. `auto` → follows `symbol-placement`. |
 | `icon-pitch-alignment` | `"map"` \| `"viewport"` \| `"auto"` | `"auto"` | Tilt reference. |
 | `icon-rotate` | number | `0`° | Rotation. *data-driven.* |
-| `icon-padding` | number | `2` px | Collision padding around the icon's bbox. |
+| `icon-padding` | padding | `[2]` px | Collision padding around the icon's bbox. Accepts single number (all sides) or CSS-style 1–4 element array; see [`padding`](../types.md#padding). |
 | `icon-keep-upright` | boolean | `false` | Flip line-anchored icons so they stay right-side-up. |
 | `icon-offset` | `[x, y]` | `[0, 0]` | Offset from anchor in multiples of icon size. *data-driven.* |
 | `icon-anchor` | enum (`center`, `left`, `right`, `top`, `bottom`, `top-left`, `top-right`, `bottom-left`, `bottom-right`) | `"center"` | Which part of the icon sits on the anchor point. *data-driven.* |
 | `icon-allow-overlap` | boolean | `false` | Render even when overlapping other symbols. *data-driven* (in later specs). |
-| `icon-overlap` | `"never"` \| `"always"` \| `"cooperative"` | — | Fine-grained overlap control. Supersedes `icon-allow-overlap` where supported. |
+| `icon-overlap` | `"never"` \| `"always"` \| `"cooperative"` | — | Fine-grained overlap control. Supersedes `icon-allow-overlap` where supported. *Since 2.1.0.* |
 | `icon-ignore-placement` | boolean | `false` | If true, this icon doesn't block placement of other symbols. |
 | `icon-optional` | boolean | `false` | If icon collides but text doesn't, keep the text. |
 | `icon-text-fit` | `"none"` \| `"width"` \| `"height"` \| `"both"` | `"none"` | Scale the icon to fit the text. Requires a sprite with `content` / `stretchX` / `stretchY` metadata. Used for pill-shaped label backgrounds. |
@@ -73,7 +73,7 @@ Icons and labels. By far the most complex layer type — it handles placement, c
 | `text-justify` | `"auto"` \| `"left"` \| `"center"` \| `"right"` | `"center"` | Alignment within wrapped lines. `auto` picks based on `text-anchor`. *data-driven.* |
 | `text-radial-offset` | number | `0` em | Radial distance from anchor. Interacts with `text-variable-anchor`. *data-driven.* |
 | `text-variable-anchor` | `string[]` | — | List of anchors to try in order; the renderer picks the first non-colliding one. |
-| `text-variable-anchor-offset` | `variableAnchorOffsetCollection` | — | `[anchor, offset, anchor, offset, …]`. Pair anchors with their own offsets. |
+| `text-variable-anchor-offset` | `variableAnchorOffsetCollection` | — | `[anchor, offset, anchor, offset, …]`. Pair anchors with their own offsets. *Since 3.3.0.* |
 | `text-anchor` | enum (same as `icon-anchor`) | `"center"` | Fallback anchor when `text-variable-anchor` is unset. *data-driven.* |
 | `text-max-angle` | number | `45`° | Max bend between consecutive glyphs on line placement. Above this, the label is dropped. |
 | `text-rotation-alignment` | `"map"` \| `"viewport"` \| `"viewport-glyph"` \| `"auto"` | `"auto"` | Whole-label rotation reference. |
@@ -85,7 +85,7 @@ Icons and labels. By far the most complex layer type — it handles placement, c
 | `text-padding` | number | `2` px | Collision-box padding. |
 | `text-keep-upright` | boolean | `true` | Flip line labels to stay readable. |
 | `text-allow-overlap` | boolean | `false` | Render even when overlapping. *data-driven.* |
-| `text-overlap` | `"never"` \| `"always"` \| `"cooperative"` | — | Replacement for `text-allow-overlap` with a middle option. |
+| `text-overlap` | `"never"` \| `"always"` \| `"cooperative"` | — | Replacement for `text-allow-overlap` with a middle option. *Since 2.1.0.* |
 | `text-ignore-placement` | boolean | `false` | Don't block other symbols. |
 | `text-optional` | boolean | `false` | Keep icon if text collides. |
 

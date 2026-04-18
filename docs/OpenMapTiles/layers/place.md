@@ -2,6 +2,8 @@
 
 Populated places and political subdivisions — continents, countries, states, cities, villages, islands, aboriginal lands. One of the two most important label layers (the other is `transportation_name`).
 
+> Upstream: [openmaptiles/layers/place/place.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/place/place.yaml) · [schema page](https://openmaptiles.org/schema/#place)
+
 - **Geometry:** Point (primary), polygon (for islands and aboriginal lands).
 - **Buffer size:** `256` px — very large, so big labels don't disappear when their anchor sits outside the tile.
 - **Data sources:**

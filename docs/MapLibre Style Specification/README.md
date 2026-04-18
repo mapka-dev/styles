@@ -1,6 +1,6 @@
 # MapLibre Style Specification — Reference
 
-One file per top-level property of a MapLibre style document. Spec version 8. Source: <https://maplibre.org/maplibre-style-spec/>.
+One file per top-level property of a MapLibre style document. Spec version 8. Upstream root reference: <https://maplibre.org/maplibre-style-spec/root/> (`/camera/` is not a separate upstream page — camera-pose properties live on `/root/`; kept as a standalone [`camera.md`](camera.md) here for readability).
 
 A MapLibre style is a JSON document. At the root it carries camera defaults, asset URLs, and the two things a renderer actually consumes: **sources** (where the data comes from) and **layers** (how it looks). Everything else is optional.
 
@@ -57,3 +57,21 @@ Required: `version`, `sources`, `layers`. Everything else is optional.
 ```
 
 Everything else is layered on top of this shape.
+
+## What's new vs. early v8
+
+Spec version has stayed at `8`, but the shape has grown. Additions relevant to existing styles:
+
+- `centerAltitude`, `roll` — GL JS ≥ 5.0.0.
+- `pitch` extended to 0–180° — GL JS ≥ 5.0.0.
+- `state` root + `global-state` expression — GL JS ≥ 5.6.0.
+- `font-faces` — MapLibre Native only (Android ≥ 11.13.0, iOS ≥ 6.18.0); GL JS still `glyphs`-only.
+- `projection` with mercator↔globe transitions — GL JS ≥ 5.0.0.
+- `color-relief` layer + `elevation` expression — GL JS ≥ 5.6.0 / Native ≥ 13.0.0 (Android) / 6.24.0 (iOS).
+- `vector.encoding: "mlt"` (MapLibre Tiles) — GL JS ≥ 5.12.0, Native Android ≥ 12.1.0, iOS ≥ 6.20.0.
+- `resampling` (replaces `raster-resampling`) — GL JS ≥ 5.20.0.
+- Hillshade methods `basic` / `combined` / `igor` / `multidirectional` — GL JS ≥ 5.5.0 / Native ≥ 13.0.0 / 6.24.0.
+
+## Version-annotation policy
+
+These docs annotate a property with "Since GL JS X.Y.Z" only when it is **recently added** or **SDK-split** (one platform ahead of another). Long-stable v8 primitives (`fill-color`, `line-width`, etc.) are left unannotated. Upstream carries full version matrices for every property; follow the per-property links there if you need the full table.

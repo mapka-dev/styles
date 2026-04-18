@@ -23,7 +23,7 @@ Elevation-to-colour ramp applied to a [`raster-dem`](../sources.md#raster-dem) s
 }
 ```
 
-> Note: the exact expression input for the colour ramp is `["elevation"]` (or similar) depending on renderer version — some builds expose it as a ramp input automatically when `color-relief-color` is set.
+The ramp input is the [`elevation`](../expressions.md) expression — returns metres above the DEM's vertical datum. Mirrors `heatmap-color` + `["heatmap-density"]`. *Since GL JS 5.6.0, Native Android 13.0.0, iOS 6.24.0.*
 
 ## Paint properties
 
@@ -61,4 +61,4 @@ Keep `color-relief-opacity: 1` for a solid tint, then let the hillshade do the d
 - Requires a valid DEM source; using a plain raster source silently does nothing.
 - `color-relief-color` must return a colour; null/transparent at any band leaves gaps.
 - Not affected by [`light`](../light.md) — colour ramp is pure data-driven.
-- Relatively new: if your target SDK version is older, `color-relief` may be ignored. Check MapLibre GL JS ≥ 5.x and native release notes.
+- Requires GL JS ≥ 5.6.0 / Native Android ≥ 13.0.0 / Native iOS ≥ 6.24.0. Older SDKs silently ignore the layer.

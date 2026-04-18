@@ -32,7 +32,7 @@ Stroked lines. The most expressive 2D primitive — dashes, patterns, gradients,
 | `line-offset` | number | `0` | px | Perpendicular offset. Useful for tram lines, dual carriageways. *data-driven, transitionable.* |
 | `line-blur` | number [0, ∞) | `0` | px | Gaussian-ish blur. *data-driven, transitionable.* |
 | `line-dasharray` | `number[]` | — | px multiples of `line-width` | Dash pattern, pairs of on/off lengths. Suppressed by `line-pattern`. *transitionable.* |
-| `line-pattern` | resolvedImage | — | — | Sprite icon tiled along the line. *transitionable.* |
+| `line-pattern` | resolvedImage | — | — | Sprite icon tiled along the line. *data-driven (since 0.49.0), transitionable.* |
 | `line-gradient` | color expression | — | — | Gradient along line progress. Requires source `lineMetrics: true`. Use `["interpolate", ["linear"], ["line-progress"], 0, c0, 1, c1]`. |
 
 ## Layout properties
@@ -40,7 +40,7 @@ Stroked lines. The most expressive 2D primitive — dashes, patterns, gradients,
 | Property | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `line-cap` | `"butt"` \| `"round"` \| `"square"` | `"butt"` | End caps. `round` adds a half-circle; `square` extends by half `line-width`. |
-| `line-join` | `"bevel"` \| `"round"` \| `"miter"` | `"miter"` | Junction style. |
+| `line-join` | `"bevel"` \| `"round"` \| `"miter"` | `"miter"` | Junction style. *data-driven.* |
 | `line-miter-limit` | number | `2` | At miter joins, angles sharper than this are beveled instead. |
 | `line-round-limit` | number | `1.05` | At round joins, shallow angles are beveled. |
 | `line-sort-key` | number | — | Within-layer draw order for overlaps. *data-driven.* |

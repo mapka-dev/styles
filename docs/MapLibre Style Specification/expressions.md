@@ -105,7 +105,7 @@ Everything is a single array with the operator as the first element. Nesting is 
 ### Math
 
 Scalar ops: `+`, `-`, `*`, `/`, `%`, `^`, `sqrt`, `abs`, `ceil`, `floor`, `round`, `min`, `max`.
-Transcendental: `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `ln`, `ln2`, `log2`, `log10`, `exp`-less (no `exp` — use `["^", ["e"], x]`).
+Transcendental: `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `ln`, `log2`, `log10`. No `exp` operator — use `["^", ["e"], x]` instead.
 Constants: `pi`, `e`, `ln2`.
 Geometry: `distance` (shortest distance in metres between input geometry and the feature).
 
@@ -113,13 +113,12 @@ Geometry: `distance` (shortest distance in metres between input geometry and the
 
 - `zoom` — current zoom as a number. Only valid **inside** a `step`/`interpolate` at the outermost level where the style permits zoom-driven evaluation, or as a filter predicate.
 
-### Heatmap
+No dedicated camera operators beyond `zoom` — use `zoom` combined with `interpolate`/`step`.
+
+### Raster / DEM
 
 - `heatmap-density` — density [0,1] at the current pixel. Only valid in `heatmap-color`.
-
-### Camera
-
-No dedicated operators — use `zoom` combined with `interpolate`/`step`.
+- `elevation` — elevation in metres from the bound `raster-dem` source. Only valid in `color-relief-color`. Mirrors `heatmap-density` for the `color-relief` layer.
 
 ## Where expressions are valid
 

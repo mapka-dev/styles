@@ -8,7 +8,7 @@ if (existsSync(".env")) {
 
 const mapConfig = JSON.parse(readFileSync("map.json", "utf8"));
 const styleConfig: StyleSpecification = JSON.parse(
-  readFileSync("style.json", "utf8"),
+  readFileSync("style-original.json", "utf8"),
 );
 
 const { key } = mapConfig;

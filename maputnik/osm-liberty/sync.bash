@@ -9,9 +9,9 @@ echo "Syncing icons..."
 rm -rf ./icons
 cp -r /tmp/osm-liberty/svgs/svgs_iconset ./icons
 
-echo "Syncing style.json"
-rm style.json 
-cp /tmp/osm-liberty/style.json ./style.json
+echo "Syncing style-original.json"
+rm style-original.json
+cp /tmp/osm-liberty/style.json ./style-original.json
 
 echo "Convert to mapka"
 yarn import

@@ -14,7 +14,7 @@ Client-side hillshading from a [`raster-dem`](../sources.md#raster-dem) source. 
     "hillshade-shadow-color": "#4a4033",
     "hillshade-highlight-color": "#fffaf0",
     "hillshade-accent-color": "#2e241a",
-    "hillshade-method": "default"
+    "hillshade-method": "standard"
   }
 }
 ```
@@ -23,14 +23,14 @@ Client-side hillshading from a [`raster-dem`](../sources.md#raster-dem) source. 
 
 | Property | Type | Default | Unit / Range | Notes |
 | --- | --- | --- | --- | --- |
-| `hillshade-illumination-direction` | number | `335` | deg [0, 360) | Compass bearing of the light source. `0` = north. *transitionable.* |
-| `hillshade-illumination-altitude` | number | `45` | deg [0, 90] | Light angle from horizon. Higher = steeper, harder shadows. *transitionable.* |
+| `hillshade-illumination-direction` | numberArray | `335` | deg [0, 359] | Compass bearing of the light source. `0` = north. Accepts an array of up to five angles for `hillshade-method: multidirectional`. *transitionable.* |
+| `hillshade-illumination-altitude` | numberArray | `45` | deg [0, 90] | Light angle from horizon. Higher = steeper, harder shadows. Array form pairs one altitude per illumination direction for `multidirectional`. *transitionable.* |
 | `hillshade-illumination-anchor` | `"map"` \| `"viewport"` | `"viewport"` | — | `map` pins the light to a geographic direction; `viewport` keeps it relative to the screen. |
-| `hillshade-exaggeration` | number [0, 1] | `0.43` | — | Strength of the relief effect. *transitionable.* |
-| `hillshade-shadow-color` | color | `"#000000"` | — | Colour of shaded slopes. *transitionable.* |
-| `hillshade-highlight-color` | color | `"#ffffff"` | — | Colour of illuminated slopes. *transitionable.* |
+| `hillshade-exaggeration` | number [0, 1] | `0.5` | — | Strength of the relief effect. *transitionable.* |
+| `hillshade-shadow-color` | colorArray | `"#000000"` | — | Colour of shaded slopes. Array form pairs one entry per illumination direction for `multidirectional`. *transitionable.* |
+| `hillshade-highlight-color` | colorArray | `"#ffffff"` | — | Colour of illuminated slopes. Array form pairs with directions for `multidirectional`. *transitionable.* |
 | `hillshade-accent-color` | color | `"#000000"` | — | Accent tint on steep faces — a subtle second-shadow. *transitionable.* |
-| `hillshade-method` | `"default"` \| `"multidirectional"` | `"default"` | — | Multidirectional lights from several azimuths, producing softer relief that doesn't wash out along the principal light direction. |
+| `hillshade-method` | `"standard"` \| `"basic"` \| `"combined"` \| `"igor"` \| `"multidirectional"` | `"standard"` | — | Relief algorithm. *Since GL JS 5.5.0, Native Android 13.0.0, iOS 6.24.0.* |
 | `resampling` | `"linear"` \| `"nearest"` | `"linear"` | — | DEM sampler. `nearest` looks blocky. |
 
 ## Layout properties
@@ -64,15 +64,19 @@ Client-side hillshading from a [`raster-dem`](../sources.md#raster-dem) source. 
 
 **Stack under terrain colour** — place the `color-relief` layer first, then `hillshade` above with moderate alpha (done via colour alpha, not `opacity`).
 
-## `hillshade-method` — single vs. multidirectional
+## `hillshade-method` — algorithm variants
 
-- `default` — one light source; classic "sun" look. Ridgelines parallel to the light direction wash out.
-- `multidirectional` — averages shading from several azimuths. More even, less directional.
+- `standard` — legacy default. One light source, classic "sun" look. Ridgelines parallel to the light direction wash out.
+- `basic` — simple Lambertian model; reflected intensity scales with the cosine of the angle between the light and the surface normal. Similar to GDAL `gdaldem` default.
+- `combined` — intensity scales with slope as well as aspect. Similar to GDAL `gdaldem -combined`.
+- `igor` — Igor's relief algorithm. Tries to minimise overwriting other map features — useful when hillshade sits under dense cartography.
+- `multidirectional` — averages shading from several azimuths. Softer relief, less directional bias. Feeds arrays of directions via `hillshade-illumination-direction`.
 
 ## Gotchas
 
 - No generic `hillshade-opacity`. Use alpha in `hillshade-*-color` to control layer strength.
-- `hillshade-exaggeration` is capped at 1 — higher values silently clamp.
+- `hillshade-exaggeration` clamps to `[0, 1]`; negative values aren't supported.
+- `hillshade-method: standard` is the default (older docs / tooling sometimes call this `"default"` — the spec value is `"standard"`).
 - `hillshade-illumination-anchor: map` + runtime bearing changes = shadows move with the compass; `viewport` keeps shadows pointing "down-left" regardless. Pick based on whether relief realism or legibility matters more.
 - `resampling: nearest` on a low-resolution DEM looks aliased; reserve for special cases.
 - Does not interact with [`light`](../light.md). Hillshade has its own lighting model.

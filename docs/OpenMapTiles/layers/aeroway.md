@@ -2,6 +2,8 @@
 
 Airport infrastructure polygons and lines based on OSM `aeroway=*`. Airport **buildings** live in the `building` layer — everything else airport-related is here.
 
+> Upstream: [openmaptiles/layers/aeroway/aeroway.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/aeroway/aeroway.yaml) · [schema page](https://openmaptiles.org/schema/#aeroway)
+
 - **Geometry:** Polygon (apron, aerodrome, taxiway area) and line (runway, taxiway linear).
 - **Buffer size:** `4` px.
 - **Data source:** OpenStreetMap only.

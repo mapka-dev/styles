@@ -143,7 +143,7 @@ You never need to touch this stack to style tiles — the attributes above are t
 ## References
 
 - Schema docs: <https://openmaptiles.org/schema/>
-- Source: <https://github.com/openmaptiles/openmaptiles>
+- Source (pinned): <https://github.com/openmaptiles/openmaptiles/tree/v3.16> — canonical layer YAMLs. Upstream `master` may have diverged; bump the tag before re-verifying.
 - OSM wiki — Map features: <https://wiki.openstreetmap.org/wiki/Map_features>
 - Natural Earth: <https://www.naturalearthdata.com/>
 - OSM polygons (water): <http://osmdata.openstreetmap.de/>

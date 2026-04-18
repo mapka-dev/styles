@@ -2,7 +2,9 @@
 
 Points of interest: shops, amenities, sport, tourism, transport stops. Dense — must be rank-filtered aggressively at each zoom level.
 
-- **Geometry:** Point.
+> Upstream: [openmaptiles/layers/poi/poi.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/poi/poi.yaml) · [schema page](https://openmaptiles.org/schema/#poi)
+
+- **Geometry:** Point (primary). Some POIs are polygons — building footprints or polygon-tagged amenities promoted via `update_poi_polygon.sql`.
 - **Buffer size:** `64` px.
 - **Data source:** OSM — `amenity`, `barrier`, `historic`, `information`, `landuse`, `leisure`, `railway`, `shop`, `sport`, `station`, `religion`, `tourism`, `aerialway`, `building`, `highway`, `office`, `waterway`.
 - **Typical minzoom:** 12 → 14 depending on `rank`.
@@ -24,7 +26,7 @@ Points of interest: shops, amenities, sport, tourism, transport stops. Dense —
 
 ### `class` values
 
-`shop`, `office`, `town_hall`, `golf`, `fast_food`, `park`, `bus`, `railway`, `aerialway`, `entrance`, `campsite`, `laundry`, `grocery`, `library`, `college`, `lodging`, `ice_cream`, `post`, `cafe`, `school`, `alcohol_shop`, `bar`, `harbor`, `car`, `hospital`, `cemetery`, `attraction`, `beer`, `music`, `stadium`, `art_gallery`, `clothing_store`, `swimming`, `castle`, `atm`, `fuel`.
+`shop`, `office`, `town_hall`, `golf`, `fast_food`, `park`, `bus`, `railway`, `aerialway`, `entrance`, `campsite`, `laundry`, `grocery`, `library`, `college`, `lodging`, `ice_cream`, `post`, `cafe`, `school`, `alcohol_shop`, `bar`, `harbor`, `car`, `hospital`, `cemetery`, `attraction`, `beer`, `music`, `stadium`, `art_gallery`, `clothing_store`, `swimming`, `castle`, `atm`, `fuel`, `zoo`.
 
 > Providers (MapTiler, Stadia) sometimes add classes. Don't assume this list is closed.
 

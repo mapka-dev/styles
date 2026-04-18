@@ -63,13 +63,16 @@ The `.json` file is an object keyed by icon name:
     "sdf": false,
     "content": [4, 4, 20, 20],
     "stretchX": [[8, 16]],
-    "stretchY": [[8, 16]]
+    "stretchY": [[8, 16]],
+    "textFitWidth": "stretchOrShrink",
+    "textFitHeight": "proportional"
   }
 }
 ```
 
 - **`sdf: true`** — icon is a signed-distance field; `icon-color` / `icon-halo-*` apply. Use for monochrome shapes you want to tint at runtime.
 - **`content`, `stretchX`, `stretchY`** — enable 9-slice scaling (useful for label backgrounds via `icon-text-fit`).
+- **`textFitWidth`, `textFitHeight`** — per-axis policies for `icon-text-fit` on a stretchable sprite. Values: `"stretchOnly"`, `"proportional"`, or `"stretchOrShrink"` (default; backwards-compatible). Added in GL JS 4.2.0, Native Android 11.4.0, iOS 6.6.0.
 - **`pixelRatio`** — set to 2 in the `@2x` JSON so the renderer knows raw pixel sizes.
 
 ## Generation

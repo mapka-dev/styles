@@ -2,6 +2,8 @@
 
 Every OSM feature with `building=*`, excluding features explicitly tagged underground (`location=underground`). Supports 2D extrusion-free rendering and 3D extrusions via `render_height`.
 
+> Upstream: [openmaptiles/layers/building/building.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/building/building.yaml) · [schema page](https://openmaptiles.org/schema/#building)
+
 - **Geometry:** Polygon.
 - **Buffer size:** `4` px.
 - **Data source:** OpenStreetMap only.

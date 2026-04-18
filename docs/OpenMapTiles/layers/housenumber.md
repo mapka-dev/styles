@@ -2,6 +2,8 @@
 
 Features with `addr:housenumber` tags, for labeling street numbers. Adds significant weight to z14 tiles.
 
+> Upstream: [openmaptiles/layers/housenumber/housenumber.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/housenumber/housenumber.yaml) · [schema page](https://openmaptiles.org/schema/#housenumber)
+
 - **Geometry:** Point (building centroid when the tag is on a building polygon).
 - **Buffer size:** `8` px.
 - **Data source:** OpenStreetMap only.

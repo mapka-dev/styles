@@ -1,6 +1,6 @@
 # Deprecations
 
-Legacy syntax that still parses but has been superseded by [expressions](expressions.md). Automated migration: `gl-style-migrate` (Mapbox) or hand-port per the tables below.
+Legacy syntax that still parses but has been superseded by [expressions](expressions.md). Automated migration: `gl-style-migrate`, shipped with `@maplibre/maplibre-gl-style-spec` (see the tool invocation at the bottom of this page). Hand-port using the tables below if you need fine-grained control.
 
 ## Functions → expressions
 
@@ -90,6 +90,10 @@ Boolean combinators (`all`, `any`, `none`) are fine in the new form; just conver
 // New
 ["==", ["geometry-type"], "Polygon"]
 ```
+
+## Deprecated paint properties
+
+- **`raster-resampling`** — superseded by the generic `resampling` paint property shared with `hillshade` and `color-relief`. `raster-resampling` still parses, but upstream advises moving to `resampling` (GL JS ≥ 5.20.0). See [`layers/raster.md`](layers/raster.md).
 
 ## Why migrate
 

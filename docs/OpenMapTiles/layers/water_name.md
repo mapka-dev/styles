@@ -2,6 +2,8 @@
 
 Labels for water bodies — lake centerlines from the [osm-lakelines](https://github.com/openmaptiles/osm-lakelines) project plus named oceans/seas/bays/straits. Only the most important water bodies carry labels.
 
+> Upstream: [openmaptiles/layers/water_name/water_name.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/water_name/water_name.yaml) · [schema page](https://openmaptiles.org/schema/#water_name)
+
 - **Geometry:** Line (lake centerline) and point.
 - **Buffer size:** `256` px — large, so long labels survive at tile edges.
 - **Data sources:**

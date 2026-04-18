@@ -2,6 +2,8 @@
 
 Human land use — residential, industrial, commercial, institutional areas, plus a few non-physical things like `place=suburb`/`quarter`/`neighbourhood` polygons. Natural Earth contributes urban areas at low zoom; OSM dominates at higher zoom.
 
+> Upstream: [openmaptiles/layers/landuse/landuse.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/landuse/landuse.yaml) · [schema page](https://openmaptiles.org/schema/#landuse)
+
 - **Geometry:** Polygon.
 - **Buffer size:** `4` px.
 - **Data sources:**

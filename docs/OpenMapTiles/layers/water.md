@@ -2,6 +2,8 @@
 
 Water polygons — oceans, seas, lakes, ponds, docks, swimming pools. Low zoom comes from Natural Earth; high zoom from [OpenStreetMapData](http://osmdata.openstreetmap.de/) (OSM-derived, pre-split into many smaller polygons for render performance). Covered water (`covered=yes`) is excluded.
 
+> Upstream: [openmaptiles/layers/water/water.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/water/water.yaml) · [schema page](https://openmaptiles.org/schema/#water)
+
 - **Geometry:** Polygon.
 - **Buffer size:** `4` px.
 - **Data sources:**

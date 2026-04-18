@@ -134,7 +134,7 @@ Bucket by `metadata.group` in Maputnik if you have dozens of layers — the grou
 
 ## Data-driven vs zoom-driven
 
-Every non-layout, non-transition property in a layer is an expression. Four common shapes:
+Every non-layout, non-transition property in a layer is an expression — but a plain literal (`2`, `"#fff"`, `[0, 0]`) is also a valid expression. *Data-driven* / *zoom-driven* tags in the per-type docs describe what **additional** expression shapes the property accepts; the constant form is always allowed. Four common shapes:
 
 ```json
 "line-width": 2                                        // constant

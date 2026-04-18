@@ -40,7 +40,9 @@
 | --- | --- | --- | --- |
 | `visibility` | `"visible"` \| `"none"` | `"visible"` | — |
 
-## Height / base conventions
+## Height / base conventions (OpenMapTiles example)
+
+The property names below are specific to OpenMapTiles. Other schemas (MapTiler Planet, Protomaps basemaps, custom tiles) use their own attributes — check the schema's `building` layer docs.
 
 OpenMapTiles `building` layer exposes:
 

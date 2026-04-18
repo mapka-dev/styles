@@ -1,9 +1,9 @@
 # `glyphs`
 
-URL template for signed-distance-field (SDF) glyph PBFs. Required if any `symbol` layer has `text-field`.
+URL template for signed-distance-field (SDF) glyph PBFs. Required if any `symbol` layer has `text-field`, with one exception — see "Local fonts" below.
 
 - **Type:** string
-- **Required:** no (required transitively whenever text is rendered)
+- **Required:** no (required transitively whenever text is rendered, unless using local fonts on GL JS ≥ 5.11.0)
 - **Default:** —
 
 ## Template
@@ -40,6 +40,12 @@ fonts/
 ```
 
 Serve statically and point `glyphs` at it.
+
+## Local fonts
+
+GL JS ≥ 5.11.0 lets you omit `glyphs` entirely and render every label from the browser's local font stack (effectively delegating to the OS text shaper). Practical when you don't want to host a PBF tree and only need common scripts. Native Android / iOS still require `glyphs` — tracked in [maplibre-native #165](https://github.com/maplibre/maplibre-native/issues/165).
+
+Separately, the GL JS map constructor option `localIdeographFontFamily` replaces only CJK glyphs with a local family — the rest still come from `glyphs`. Orthogonal to the omit-entirely path above.
 
 ## Interaction with `font-faces`
 

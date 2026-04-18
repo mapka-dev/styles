@@ -2,72 +2,31 @@
   "version": 8,
   "name": "Dark Matter",
   "metadata": {
-    "mapka": {
-      "layerGroups": [
-        {
-          "value": "basemap",
-          "label": "Basemap",
-          "children": [
-            {"value": "background"},
-            {"value": "water"},
-            {"value": "landcover_ice_shelf"},
-            {"value": "landcover_glacier"},
-            {"value": "landuse_residential"},
-            {"value": "landcover_wood"},
-            {"value": "landuse_park"},
-            {"value": "waterway"},
-            {"value": "water_name"},
-            {"value": "building"},
-            {"value": "aeroway-taxiway"},
-            {"value": "aeroway-runway-casing"},
-            {"value": "aeroway-area"},
-            {"value": "aeroway-runway"},
-            {"value": "road_area_pier"},
-            {"value": "road_pier"},
-            {"value": "highway_path"},
-            {"value": "highway_minor"},
-            {"value": "highway_major_casing"},
-            {"value": "highway_major_inner"},
-            {"value": "highway_major_subtle"},
-            {"value": "highway_motorway_casing"},
-            {"value": "highway_motorway_inner"},
-            {"value": "road_oneway"},
-            {"value": "road_oneway_opposite"},
-            {"value": "highway_motorway_subtle"},
-            {"value": "railway_transit"},
-            {"value": "railway_transit_dashline"},
-            {"value": "railway_minor"},
-            {"value": "railway_minor_dashline"},
-            {"value": "railway"},
-            {"value": "railway_dashline"},
-            {"value": "highway_name_other"},
-            {"value": "highway_name_motorway"},
-            {"value": "boundary_state"},
-            {"value": "boundary_country_z0-4"},
-            {"value": "boundary_country_z5-"},
-            {"value": "place_other"},
-            {"value": "place_suburb"},
-            {"value": "place_village"},
-            {"value": "place_town"},
-            {"value": "place_city"},
-            {"value": "place_city_large"},
-            {"value": "place_state"},
-            {"value": "place_country_other"},
-            {"value": "place_country_minor"},
-            {"value": "place_country_major"}
-          ]
-        }
-      ]
-    }
+    "mapbox:autocomposite": false,
+    "mapbox:groups": {
+      "101da9f13b64a08fa4b6ac1168e89e5f": {
+        "collapsed": false,
+        "name": "Places"
+      },
+      "a14c9607bc7954ba1df7205bf660433f": {"name": "Boundaries"},
+      "b6371a3f2f5a9932464fa3867530a2e5": {
+        "collapsed": false,
+        "name": "Transportation"
+      }
+    },
+    "mapbox:type": "template",
+    "openmaptiles:mapbox:owner": "openmaptiles",
+    "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t",
+    "openmaptiles:version": "3.x"
   },
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.mapka.localhost/v1/mapka/tilesets/planetiler_openmaptiles-v1/tile.json"
+      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key={key}"
     }
   },
-  "sprite": "https://api.mapka.localhost/v1/openmaptiles/styles/dark-matter-gl/sprite",
-  "glyphs": "https://api.mapka.localhost/v1/openmaptiles/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://openmaptiles.github.io/dark-matter-gl-style/sprite",
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
   "layers": [
     {
       "id": "background",
@@ -461,7 +420,14 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 15,
-      "filter": ["all", ["==", "oneway", 1]],
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          1
+        ]
+      ],
       "layout": {
         "symbol-placement": "line",
         "icon-image": "oneway",
@@ -469,9 +435,22 @@
         "icon-padding": 2,
         "icon-rotation-alignment": "map",
         "icon-rotate": 0,
-        "icon-size": {"stops": [[15, 0.5], [19, 1]]}
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
       },
-      "paint": {"icon-opacity": 0.5}
+      "paint": {
+        "icon-opacity": 0.5
+      }
     },
     {
       "id": "road_oneway_opposite",
@@ -479,7 +458,14 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 15,
-      "filter": ["all", ["==", "oneway", -1]],
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          -1
+        ]
+      ],
       "layout": {
         "symbol-placement": "line",
         "icon-image": "oneway",
@@ -487,9 +473,22 @@
         "icon-padding": 2,
         "icon-rotation-alignment": "map",
         "icon-rotate": 180,
-        "icon-size": {"stops": [[15, 0.5], [19, 1]]}
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
       },
-      "paint": {"icon-opacity": 0.5}
+      "paint": {
+        "icon-opacity": 0.5
+      }
     },
     {
       "id": "highway_motorway_subtle",

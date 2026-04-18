@@ -2,6 +2,8 @@
 
 Large protected/natural areas — national parks, nature reserves, protected areas, selected historic sites. Both polygons (for fills/outlines) and points (for labels).
 
+> Upstream: [openmaptiles/layers/park/park.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/park/park.yaml) · [schema page](https://openmaptiles.org/schema/#park)
+
 - **Geometry:** Polygon + point.
 - **Buffer size:** `4` px.
 - **Data source:** OSM (`boundary=national_park`, `boundary=protected_area`, `leisure=nature_reserve`, selected `historic=*`).

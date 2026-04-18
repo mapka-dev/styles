@@ -2,6 +2,8 @@
 
 All linear transport: roads, railways, aerial ways, ferries, shipping lines. Directly derived from the OSM road hierarchy. **Labels live in `transportation_name`** — this layer carries only geometry and attributes.
 
+> Upstream: [openmaptiles/layers/transportation/transportation.yaml](https://github.com/openmaptiles/openmaptiles/blob/master/layers/transportation/transportation.yaml) · [schema page](https://openmaptiles.org/schema/#transportation)
+
 - **Geometry:** Line.
 - **Buffer size:** `4` px.
 - **Data source:** OSM; requires `ne_10m_admin_0_countries` (for ferry/shipping hints).
@@ -18,7 +20,7 @@ All linear transport: roads, railways, aerial ways, ferries, shipping lines. Dir
 | `oneway` | `1` / `0` / `-1` | `1` = forward oneway, `-1` = backward oneway, `0` = not oneway. |
 | `ramp` | `1` / `0` | Link (on/off ramp) or steps. |
 | `service` | enum | See below. |
-| `access` | enum | `no` for restricted access. |
+| `access` | enum | `no`, `private` — restricted or private access. |
 | `toll` | `0` / `1` | Toll road. |
 | `expressway` | `1` | Expressway flag (can coexist with any class). |
 | `layer` | int | OSM `layer` — stacking order, negative = below surface. |
@@ -43,6 +45,7 @@ Note railway classes are not in `transportation.class` — they surface via `sub
 
 - Rail: `rail`, `narrow_gauge`, `preserved`, `funicular`, `subway`, `light_rail`, `monorail`, `tram`.
 - Paths: `pedestrian`, `path`, `footway`, `cycleway`, `steps`, `bridleway`, `corridor`, `platform`.
+- **Deprecated:** `ferry` — retained for backward compatibility; styles should match `class=ferry` instead.
 
 ### `service` values
 
