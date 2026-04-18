@@ -6,6 +6,7 @@
   },
   "bin": {
     "format": "./bin/format.ts",
+    "id": "./bin/id.ts",
     "import": "./bin/import.ts",
     "validate": "./bin/validate.ts"
   },

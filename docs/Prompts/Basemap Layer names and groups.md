@@ -29,9 +29,6 @@ All paths below are relative to the repo root unless noted.
 6. `$STYLE_DIR/style.json` — the style you are about to change.
 7. `$STYLE_DIR/style-original.json` — the upstream file the importer pulls
    from. Treat as read-only.
-8. `bin/import.ts` — the importer that rebuilds `style.json` from
-   `style-original.json`. Any renames you make only survive the next
-   `yarn import` if they also live here.
 
 ## Task
 
@@ -62,36 +59,31 @@ All paths below are relative to the repo root unless noted.
 3. **Build a grouped `metadata.mapka.layerGroups` tree.**
    - Use the shapes in `docs/Mapka Style Specification/layer-groups.md`:
      leaf = `{ value }`, group = `{ value, label, icon, children }`.
-   - `value` on groups: a short readable slug, unique within the style
-     (e.g. `roads`, `roads_bridges`). Not referenced elsewhere.
+   - `value` on groups: a random id, unique within the style. Not
+     human-readable and not referenced from anywhere else — generate one
+     per group with `yarn id` (see `bin/id.ts`).
    - `label`: Title Case, user-facing.
-   - `icon`: must resolve against the active sprite. Use
-     `maki:<name>` where the sprite has a maki icon, otherwise pick from
-     `$STYLE_DIR/icons/`. When unsure, use `maki:map` for basemap roots,
-     `maki:roadblock` for roads, `maki:town` for places, `maki:water`
-     for hydrography, `maki:park` for green areas.
-   - Target depth: 2–3 levels. Example top level:
-     `Basemap > (Land, Water, Roads, Rail, Aviation, Buildings, Boundaries)`
-     and `Labels > (Places, Roads, POI, Water names)`.
+   - `icon`: required on every group (spec-mandated) and must resolve
+     against the active sprite.
+     - **Category groups** use `maki:<name>` or `temaki:<name>`
+      https://github.com/mapbox/maki/tree/main/icons
+      https://github.com/rapideditor/temaki/tree/main/icons
+     - **The `Basemap` root** uses a non-maki icon basemap
+   - **Depth: exactly 3 levels** — `Basemap` (single root) → category →
+     layer leaf. Categories must contain only leaves; no nested groups.
+   - **Single root, labels merged into categories.** There is no top-level
+     `Labels` group. Label layers live inside the matching category: road
+     labels under `Roads`, place labels under `Places`, water name labels
+     under `Water`, POI labels under `POI`
    - Every renamed layer id must appear exactly once in the tree. No
      duplicates, no missing ids. Ungrouped layers are allowed but discouraged;
      flag any you could not place.
-4. **Update `bin/import.ts` so the rename + grouping survive re-sync.**
-   - Add a rename map keyed by upstream `style-original.json` id → new Mapka
-     id. Apply it when constructing `styleConfig.layers` and when building
-     the `layerGroups` tree.
-   - Replace the current flat `basemap` wrap at `bin/import.ts:37-47` with the
-     same grouped tree you wrote into `style.json`.
-   - `yarn import` in `$STYLE_DIR` must produce byte-equivalent output to
-     the hand-edited `style.json` (modulo formatting, which `yarn format`
-     normalizes).
 
 ## Output
 
 Edit files in place:
 
 - `$STYLE_DIR/style.json` — renamed layers + new `metadata.mapka.layerGroups`
-- `bin/import.ts` — rename map + grouped-tree builder
 
 Do not create new files.
 
@@ -100,14 +92,13 @@ Do not create new files.
 Run from `$STYLE_DIR`:
 
 1. `yarn validate` — MapLibre style spec must pass.
-2. `yarn format` — no diff after running twice.
-3. `yarn import` — `style.json` must be unchanged (only re-formatted) after
-   running. If it changes, the rename map or tree builder in `bin/import.ts`
-   is out of sync with the hand-edited `style.json`; fix `bin/import.ts`, not
-   `style.json`.
-4. Sanity grep: every `layers[].id` appears exactly once as a leaf `value`
+2. `yarn format` — no diff after running twice.`.
+3. Sanity grep: every `layers[].id` appears exactly once as a leaf `value`
    under `metadata.mapka.layerGroups`, and every leaf `value` resolves to an
    existing `layers[].id`.
+4. Depth check: exactly two tiers of groups. The single top-level `Basemap`
+   group contains only category groups; each category group contains only
+   leaves. No group is nested three deep.
 
 ## Non-goals
 
@@ -123,6 +114,11 @@ Run from `$STYLE_DIR`:
 
 ## Rules
 
+- `metadata.mapka.layerGroups` has a fixed shape: one `Basemap` root whose
+  children are category groups, whose children are layer leaves. No deeper
+  nesting. Labels live inside the matching category — never in a separate
+  top-level `Labels` group. Only category groups use `maki:` icons; the
+  `Basemap` root uses a non-maki sprite icon from `$STYLE_DIR/icons/`.
 - The four base styles share a single vocabulary of layer ids. When you run
   this prompt against the second/third/fourth style, reuse ids from the first
   wherever the same semantic layer exists upstream.
