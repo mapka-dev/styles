@@ -35,12 +35,10 @@ All paths below are relative to the repo root unless noted.
 6. `docs/Mapka Style Specification/layer-groups.md` and `.../layers.md` —
    invariants that govern what `metadata.mapka.layerGroups` and per-layer
    `metadata.mapka` must still look like after the cleanup.
-7. `$STYLE_DIR/style.json` — the file you will edit.
-8. `$STYLE_DIR/style-original.json` — upstream; read-only reference for what
-   the importer will regenerate.
-9. `bin/import.ts` — the importer that rebuilds `style.json`. Any merges,
-   deletions, or rewrites you make only survive the next `yarn import` if
-   they also live here.
+7. `$STYLE_DIR/style.json` — the file you will edit. This is the working
+   Mapka style.
+8. `$STYLE_DIR/style-original.json` — read-only upstream snapshot. Reference
+   only; never edit. `sync.bash` overwrites it on each upstream re-sync.
 
 ## Task
 
@@ -114,8 +112,7 @@ Flag for deletion any layer where at least one is true:
 - **No visible output** at any zoom across any representative area: empty
   filter match against the current tileset schema, or `paint` that reduces
   it to transparent/zero-width (e.g. `fill-opacity: 0`, `line-width: 0`).
-- **Visibility `none`** with no runtime toggle in `bin/import.ts` or the
-  SDK — a dead layer.
+- **Visibility `none`** with no runtime toggle in the SDK — a dead layer.
 - **Source-layer missing** from the tileset (cross-reference with
   `docs/OpenMapTiles/layers/`).
 - **Duplicate** of another layer with the same filter and near-identical
@@ -137,7 +134,7 @@ a one-line justification.
 
 ### 4. Propagate every change
 
-For each merge and deletion, update:
+For each merge and deletion, update inside `$STYLE_DIR/style.json`:
 
 - `layers[]` — remove merged/deleted entries, keep merged result at the
   lowest original index.
@@ -146,9 +143,6 @@ For each merge and deletion, update:
   with the merged id; verify no duplicate `value` and no dangling leaves.
 - Any `"ref": "<old_id>"` in other layers (uncommon in these styles, but
   check).
-- `bin/import.ts` — update the rename map **and** the grouped tree builder
-  introduced by `docs/Prompts/Layer names and groups.md` so `yarn import`
-  reproduces the post-cleanup `style.json` byte-for-byte.
 
 ## Output
 
@@ -156,10 +150,9 @@ Edit files in place:
 
 - `$STYLE_DIR/style.json` — merged/deleted/modernized layers and updated
   `metadata.mapka.layerGroups`.
-- `bin/import.ts` — reflect the same merges, deletions, and rename map so
-  re-syncs don't undo the cleanup.
 
-Do not create new files.
+Do not edit `$STYLE_DIR/style-original.json` (read-only upstream snapshot)
+or any file under `bin/`. Do not create new files.
 
 At the end of your run, print:
 
@@ -175,16 +168,13 @@ Run from `$STYLE_DIR`:
 
 1. `yarn validate` — must pass against the current MapLibre style spec.
 2. `yarn format` — no diff after running twice.
-3. `yarn import` — `style.json` must be unchanged afterward. If it changes,
-   the merge/delete/rename logic in `bin/import.ts` is out of sync with
-   `style.json`; fix `bin/import.ts`, not `style.json`.
-4. Visual parity check at zooms `{0, 4, 8, 12, 15, 17}` on three viewports:
+3. Visual parity check at zooms `{0, 4, 8, 12, 15, 17}` on three viewports:
    a dense urban center, a mixed park/water edge, and a motorway junction.
    A merged layer must be visually indistinguishable from the originals.
    A deleted layer must not produce a visible regression.
-5. Sanity grep: every `layers[].id` appears exactly once as a leaf `value`
-   under `metadata.mapka.layerGroups`; every leaf `value` resolves to an
-   existing `layers[].id`; no `id` is used twice.
+4. Sanity check on `style.json`: every `layers[].id` appears exactly once as
+   a leaf `value` under `metadata.mapka.layerGroups`, every leaf `value`
+   resolves to an existing `layers[].id`, and no `id` is used twice.
 
 ## Non-goals
 

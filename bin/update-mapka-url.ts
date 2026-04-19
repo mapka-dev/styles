@@ -8,11 +8,12 @@ if (existsSync(".env")) {
 
 const mapConfig = JSON.parse(readFileSync("map.json", "utf8"));
 const styleConfig: StyleSpecification = JSON.parse(
-  readFileSync("style-original.json", "utf8"),
+  readFileSync("style.json", "utf8"),
 );
-
+ 
 const { key } = mapConfig;
 
+const MAPKA_DEV_API_URL = process.env.MAPKA_DEV_API_URL || "https://api.dev.mapka.dev";
 const MAPKA_API_URL = process.env.MAPKA_API_URL || "https://api.mapka.dev";
 const MAPKA_ACCOUNT_NAME = process.env.MAPKA_ACCOUNT_NAME || "default";
 
@@ -28,23 +29,11 @@ if (styleConfig.sources.openmaptiles) {
 if(styleConfig.sources.natural_earth_shaded_relief) {
   if ("tiles" in styleConfig.sources.natural_earth_shaded_relief) {
     styleConfig.sources.natural_earth_shaded_relief.maxzoom = 5;
-    styleConfig.sources.natural_earth_shaded_relief.tiles = [
-      `${MAPKA_API_URL}/v1/naturalearth/datasets/ne_shaded_relief/tilesets/v3_10m_hr_lc_sr_w/{z}/{x}/{y}.png`,
-    ]
+    styleConfig.sources.natural_earth_shaded_relief.tiles = MAPKA_API_URL.includes("localhost")
+    ? [`${MAPKA_DEV_API_URL}/v1/naturalearth/datasets/ne_shaded_relief/tilesets/v3_10m_hr_lc_sr_w/{z}/{x}/{y}.png?apiKey=pb-vR8hLiUEfmI29tNYy04npD3FDocrH2Wx`]
+    : [`${MAPKA_API_URL}/v1/naturalearth/datasets/ne_shaded_relief/tilesets/v3_10m_hr_lc_sr_w/{z}/{x}/{y}.png`]
   }
 }
-
-styleConfig.metadata = {
-  mapka: {
-    layerGroups: [{
-      value: "basemap",
-      label: "Basemap",
-      children: styleConfig.layers.map(layer => ({
-        value: layer.id,
-      })),
-    }],
-  },
-};
 
 
 writeFileSync("style.json", JSON.stringify(styleConfig, null, 2));

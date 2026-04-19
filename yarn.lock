@@ -130,7 +130,7 @@ __metadata:
   bin:
     format: ./bin/format.ts
     id: ./bin/id.ts
-    import: ./bin/import.ts
+    update-mapka-url: ./bin/update-mapka-url.ts
     validate: ./bin/validate.ts
   languageName: unknown
   linkType: soft

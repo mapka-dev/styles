@@ -12,7 +12,7 @@ rm style-original.json
 cp /tmp/dark-matter-gl-style/style.json ./style-original.json
 
 echo "Convert to mapka"
-yarn import
+yarn update-mapka-url
 
 echo "Validate style spec"
 yarn validate
