@@ -6,7 +6,8 @@
   },
   "bin": {
     "format": "./bin/format.ts",
-    "import": "./bin/import.ts",
+    "id": "./bin/id.ts",
+    "update-mapka-url": "./bin/update-mapka-url.ts",
     "validate": "./bin/validate.ts"
   },
   "scripts": {
@@ -21,10 +22,10 @@
     "maputnik/*"
   ],
   "devDependencies": {
-    "@biomejs/biome": "^2.2.0",
-    "@chyzwar/biome-config": "^0.4.0",
-    "@maplibre/maplibre-gl-style-spec": "^23.3.0",
-    "@types/node": "^24.3.0"
+    "@biomejs/biome": "^2.4.12",
+    "@chyzwar/biome-config": "^0.4.2",
+    "@maplibre/maplibre-gl-style-spec": "^24.8.1",
+    "@types/node": "^25.6.0"
   },
   "packageManager": "yarn@4.12.0"
 }
