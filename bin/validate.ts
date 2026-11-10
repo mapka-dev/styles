@@ -6,13 +6,7 @@ const ENCODING = "utf8";
 
 const style = readFileSync(STYLE_JSON, ENCODING);
 const parsed = JSON.parse(style);
-const issues = validateStyleMin(parsed);
-const errors = issues.filter((issue) => issue.severity === "error");
-const warnings = issues.filter((issue) => issue.severity === "warning");
-
-if (warnings.length > 0) {
-  console.warn(warnings);
-}
+const errors = validateStyleMin(parsed);
 
 if (errors.length > 0) {
   console.error(errors);
