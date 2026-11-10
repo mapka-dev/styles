@@ -105,17 +105,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mapbox/jsonlint-lines-primitives@npm:~2.0.2":
-  version: 2.0.2
-  resolution: "@mapbox/jsonlint-lines-primitives@npm:2.0.2"
-  checksum: 10c5/18890cc678af0dd0b252f1ce24492c8218d6f26b9e35c1ec040a4fecda2ebcba2cf707dcec45c4b5b8974fe7163547af047d05206eaed7605abfd96bc9d23aef
+"@mapbox/jsonlint-lines-primitives@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@mapbox/jsonlint-lines-primitives@npm:2.0.3"
+  checksum: 10c5/2762c05f797173506eed122d06bd62436b3053733fb920195dd9f053084450098f08cd8f422bb04b7c042d5eeb9fd76e22f99088b2549f1b51875659c2f64d71
   languageName: node
   linkType: hard
 
-"@mapbox/unitbezier@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@mapbox/unitbezier@npm:0.0.1"
-  checksum: 10c5/5c230f8b3a06327c2668c0094e97baf05d6d30df350a69654027addf82cd3e6495ead03b8122ae4ccfcf89bcf1b0da32021cf4ff066865b2e2924ebb66dbbb28
+"@mapbox/unitbezier@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@mapbox/unitbezier@npm:1.0.0"
+  checksum: 10c5/6c27c441f324f324e59abc44e08eeed7edea5156a2ae74744bb932ab67ba43a4b9f23fc701e4ce1fd081ea3105e64e2ea60863af18f93e9714db0578fe4852eb
   languageName: node
   linkType: hard
 
@@ -125,7 +125,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^2.4.12"
     "@chyzwar/biome-config": "npm:^0.4.2"
-    "@maplibre/maplibre-gl-style-spec": "npm:^24.8.1"
+    "@maplibre/maplibre-gl-style-spec": "npm:^26.5.1"
     "@types/node": "npm:^25.6.0"
   bin:
     format: ./bin/format.ts
@@ -135,22 +135,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@maplibre/maplibre-gl-style-spec@npm:^24.8.1":
-  version: 24.8.1
-  resolution: "@maplibre/maplibre-gl-style-spec@npm:24.8.1"
+"@maplibre/maplibre-gl-style-spec@npm:^26.5.1":
+  version: 26.5.1
+  resolution: "@maplibre/maplibre-gl-style-spec@npm:26.5.1"
   dependencies:
-    "@mapbox/jsonlint-lines-primitives": "npm:~2.0.2"
-    "@mapbox/unitbezier": "npm:^0.0.1"
+    "@mapbox/jsonlint-lines-primitives": "npm:^2.0.3"
+    "@mapbox/unitbezier": "npm:^1.0.0"
     json-stringify-pretty-compact: "npm:^4.0.0"
     minimist: "npm:^1.2.8"
     quickselect: "npm:^3.0.0"
-    rw: "npm:^1.3.3"
     tinyqueue: "npm:^3.0.0"
   bin:
     gl-style-format: dist/gl-style-format.mjs
     gl-style-migrate: dist/gl-style-migrate.mjs
     gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c5/919b0cc30374867f26554cb235a570485c106c4a584d984b23ba09f3cf67b5a8709a6d8202c3e6c854abd4a250ffd8621e0058a350dcdae6a28705f966628e7c
+  checksum: 10c5/a0aa8dffe79a38cd2a6d5a489ae47eef64a7d66743a91b977f3af913e7a8ae35f15733dfe4e646a3d4c3e7baab96076dbc52d05b422a1335d121882954860c47
   languageName: node
   linkType: hard
 
@@ -189,13 +188,6 @@ __metadata:
   version: 3.0.0
   resolution: "quickselect@npm:3.0.0"
   checksum: 10c5/b61272ceac12081f64757c8788f8d78cd102a4104a9f61031ef3a0f4581c7b3fda5431accec96e48703d3c0956671595fab0956cd206f67a7b24efcd1f4bede4
-  languageName: node
-  linkType: hard
-
-"rw@npm:^1.3.3":
-  version: 1.3.3
-  resolution: "rw@npm:1.3.3"
-  checksum: 10c5/97b03439d543ba110e42fe7bba7c832a4a29f3efda38f177fa96837dc0aface6482c123f0692149449c3a6d720177840e27d6b870657819c3b0138f78f62e63c
   languageName: node
   linkType: hard
 
