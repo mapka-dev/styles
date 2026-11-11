@@ -22,10 +22,10 @@
     "maputnik/*"
   ],
   "devDependencies": {
-    "@biomejs/biome": "^2.4.12",
-    "@chyzwar/biome-config": "^0.4.2",
-    "@maplibre/maplibre-gl-style-spec": "^26.5.1",
-    "@types/node": "^25.6.0"
+    "@biomejs/biome": "^2.6.6",
+    "@chyzwar/biome-config": "^0.4.4",
+    "@maplibre/maplibre-gl-style-spec": "^26.6.0",
+    "@types/node": "^26.6.6"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.18.1"
 }

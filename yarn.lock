@@ -2,22 +2,28 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 10
   cacheKey: 10c5
 
-"@biomejs/biome@npm:^2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/biome@npm:2.4.12"
+"@biomejs/biome@npm:^2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/biome@npm:2.6.6"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:2.4.12"
-    "@biomejs/cli-darwin-x64": "npm:2.4.12"
-    "@biomejs/cli-linux-arm64": "npm:2.4.12"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.4.12"
-    "@biomejs/cli-linux-x64": "npm:2.4.12"
-    "@biomejs/cli-linux-x64-musl": "npm:2.4.12"
-    "@biomejs/cli-win32-arm64": "npm:2.4.12"
-    "@biomejs/cli-win32-x64": "npm:2.4.12"
+    "@biomejs/cli-android-arm64": "npm:2.6.6"
+    "@biomejs/cli-android-x64": "npm:2.6.6"
+    "@biomejs/cli-darwin-arm64": "npm:2.6.6"
+    "@biomejs/cli-darwin-x64": "npm:2.6.6"
+    "@biomejs/cli-linux-arm64": "npm:2.6.6"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.6.6"
+    "@biomejs/cli-linux-x64": "npm:2.6.6"
+    "@biomejs/cli-linux-x64-musl": "npm:2.6.6"
+    "@biomejs/cli-win32-arm64": "npm:2.6.6"
+    "@biomejs/cli-win32-x64": "npm:2.6.6"
   dependenciesMeta:
+    "@biomejs/cli-android-arm64":
+      optional: true
+    "@biomejs/cli-android-x64":
+      optional: true
     "@biomejs/cli-darwin-arm64":
       optional: true
     "@biomejs/cli-darwin-x64":
@@ -36,72 +42,86 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c5/39edb44b16895aa89f5812610cc8fa23454e8027246e2330be5cdcc851c9fe6d83d9e141482aa94936bbcdd7103877eeebcda858b5f0c12ae1e873daeddd0429
+  checksum: 10c5/45271a95825e9fdc6f47b4e890f75dc486f2a8e5a5b7d132ee86f79e442fd928fb28c607f5cd69e3606f8d67b6fcd59af7ca9fc1ebdb51fb905f66f8aa1ed562
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.4.12"
+"@biomejs/cli-android-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-android-arm64@npm:2.6.6"
+  conditions: os=android & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-android-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-android-x64@npm:2.6.6"
+  conditions: os=android & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-darwin-x64@npm:2.4.12"
+"@biomejs/cli-darwin-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-darwin-x64@npm:2.6.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.4.12"
+"@biomejs/cli-linux-arm64-musl@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.6"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-linux-arm64@npm:2.4.12"
+"@biomejs/cli-linux-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-arm64@npm:2.6.6"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.4.12"
+"@biomejs/cli-linux-x64-musl@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.6"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-linux-x64@npm:2.4.12"
+"@biomejs/cli-linux-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-x64@npm:2.6.6"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-win32-arm64@npm:2.4.12"
+"@biomejs/cli-win32-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-win32-arm64@npm:2.6.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.4.12":
-  version: 2.4.12
-  resolution: "@biomejs/cli-win32-x64@npm:2.4.12"
+"@biomejs/cli-win32-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-win32-x64@npm:2.6.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@chyzwar/biome-config@npm:^0.4.2":
-  version: 0.4.2
-  resolution: "@chyzwar/biome-config@npm:0.4.2"
+"@chyzwar/biome-config@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "@chyzwar/biome-config@npm:0.4.4"
   peerDependencies:
     "@biomejs/biome": ^2.0.0
-  checksum: 10c5/0caab19d404cdea75da3c3e6801486e7479c6f0a54f0b5d9fc1d4b9223698088bfaa3e3c4074562f2436883428f8e74f4eb050abb7deb3bdab767b3143260e62
+  checksum: 10c5/febe8c181347303a1ece1025ce43a1a7ef97f7ab6f9522aac9473c6676ebf495389d03a097f4d1b2b3989923e38f3df0127d9b08138d7e61d47d277531853fc7
   languageName: node
   linkType: hard
 
@@ -123,10 +143,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mapka/styles@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:^2.4.12"
-    "@chyzwar/biome-config": "npm:^0.4.2"
-    "@maplibre/maplibre-gl-style-spec": "npm:^26.5.1"
-    "@types/node": "npm:^25.6.0"
+    "@biomejs/biome": "npm:^2.6.6"
+    "@chyzwar/biome-config": "npm:^0.4.4"
+    "@maplibre/maplibre-gl-style-spec": "npm:^26.6.0"
+    "@types/node": "npm:^26.6.6"
   bin:
     format: ./bin/format.ts
     id: ./bin/id.ts
@@ -135,9 +155,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@maplibre/maplibre-gl-style-spec@npm:^26.5.1":
-  version: 26.5.1
-  resolution: "@maplibre/maplibre-gl-style-spec@npm:26.5.1"
+"@maplibre/maplibre-gl-style-spec@npm:^26.6.0":
+  version: 26.6.0
+  resolution: "@maplibre/maplibre-gl-style-spec@npm:26.6.0"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:^2.0.3"
     "@mapbox/unitbezier": "npm:^1.0.0"
@@ -149,7 +169,7 @@ __metadata:
     gl-style-format: dist/gl-style-format.mjs
     gl-style-migrate: dist/gl-style-migrate.mjs
     gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c5/a0aa8dffe79a38cd2a6d5a489ae47eef64a7d66743a91b977f3af913e7a8ae35f15733dfe4e646a3d4c3e7baab96076dbc52d05b422a1335d121882954860c47
+  checksum: 10c5/c3b1c107d226ae782a45ce7314c4f403d2070d724d62d10eff57b06c0e37dc8cbbecb0c905b8235bbc4032d4a436ff11fe1fc2d09ea5ee7a76f84b0fa981f548
   languageName: node
   linkType: hard
 
@@ -161,12 +181,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@types/node@npm:^25.6.0":
-  version: 25.6.0
-  resolution: "@types/node@npm:25.6.0"
+"@types/node@npm:^26.6.6":
+  version: 26.6.6
+  resolution: "@types/node@npm:26.6.6"
   dependencies:
-    undici-types: "npm:~7.19.0"
-  checksum: 10c5/89f694d23537a3dd265014cdf8f22d7e540db2047b0f5d2c4f520d8af3a0e216f5d0463235552923c72198394f1859d55fe441b1b4d13ac707cae4882b6389bf
+    undici-types: "npm:~8.9.0"
+  checksum: 10c5/c0340b4aa692c4d7678b01d8fc5dece60f5ec99cab9e3bbd78e34d1f9f1e7b735b7f4d7125e54856612eb7018b3d2d74ae225f4bfea61b54d9015b0e9978cf12
   languageName: node
   linkType: hard
 
@@ -198,9 +218,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~7.19.0":
-  version: 7.19.2
-  resolution: "undici-types@npm:7.19.2"
-  checksum: 10c5/1edac6d3f68192d80105ce4f0161d467d8bc3167cd4c265f38aa4d93f72d58d9ab057f779d36109bd646b6181eb885165d90c5d766d8ee3e174d2a3dfc213f5c
+"undici-types@npm:~8.9.0":
+  version: 8.9.0
+  resolution: "undici-types@npm:8.9.0"
+  checksum: 10c5/85897cd1e11a90defd6c28c93eb07fdcde4c226ea90768e158e2d54848bc481b9e9b1bb80c8ffcb1bf7cb188650c6db5ef0191afce5824abab0cc3ab0d422d07
   languageName: node
   linkType: hard

@@ -1,4 +1,17 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@chyzwar/biome-config/react"]
+  "extends": ["@chyzwar/biome-config/react"],
+  "files": {
+    "includes": ["**", "!**/icons/*.svg"]
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "enabled": false
+    }
+  }
 }
