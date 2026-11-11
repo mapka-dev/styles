@@ -26,7 +26,7 @@ jobs:
     - name: Setup Node.js 
       uses: actions/setup-node@v4
       with:
-        node-version: '24.4.1'
+        node-version-file: .node-version
         registry-url: 'https://registry.npmjs.org'
 
     - name: Cache node_modules
@@ -52,17 +52,17 @@ jobs:
         MAPKA_API_KEY: ${{ secrets.MAPKA_DEV_OPENMAPTILES_API_KEY }}
       run: |
         cd dark-matter-gl-style
-        yarn update-mapka-url & yarn format
+        yarn update-mapka-url && yarn format
         mapka map push --yes --publish
         cd ..
 
         cd osm-bright-gl-style
-        yarn update-mapka-url & yarn format
+        yarn update-mapka-url && yarn format
         mapka map push --yes --publish
         cd ..
 
         cd positron-gl-style
-        yarn update-mapka-url & yarn format
+        yarn update-mapka-url && yarn format
         mapka map push --yes --publish
     
     - name: Publish maputnik styles
@@ -73,6 +73,6 @@ jobs:
         MAPKA_API_KEY: ${{ secrets.MAPKA_DEV_MAPUTNIK_API_KEY }}
       run: |
         cd osm-liberty
-        yarn update-mapka-url & yarn format
+        yarn update-mapka-url && yarn format
         mapka map push --yes --publish
         cd ..
