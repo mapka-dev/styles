@@ -8,7 +8,7 @@
     "openmaptiles",
     "planetiler",
     "tilesets"
-  ], 
+  ],
   "files.associations": {
     ".env.example": "env",
     ".env.test": "env",

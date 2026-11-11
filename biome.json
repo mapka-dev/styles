@@ -13,5 +13,13 @@
     "formatter": {
       "enabled": false
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/style.json", "**/style-original.json"],
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
 }
